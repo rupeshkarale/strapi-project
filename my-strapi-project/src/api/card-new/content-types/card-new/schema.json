@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "card_news",
+  "info": {
+    "singularName": "card-new",
+    "pluralName": "card-news",
+    "displayName": "CardNew"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card"
+    }
+  }
+}
