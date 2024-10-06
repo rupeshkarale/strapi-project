@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_image_with_links",
+  "info": {
+    "displayName": "Image-with-link"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

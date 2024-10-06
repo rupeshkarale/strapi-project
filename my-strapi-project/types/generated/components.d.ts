@@ -60,6 +60,53 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedImageWithLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_image_with_links';
+  info: {
+    displayName: 'Image-with-link';
+  };
+  attributes: {
+    link: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SharedHeader extends Struct.ComponentSchema {
+  collectionName: 'components_shared_headers';
+  info: {
+    displayName: 'header';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    left_image: Schema.Attribute.Media<'images' | 'files'>;
+    main_image: Schema.Attribute.Media<'images' | 'files'>;
+    right_image: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface SharedDowloadApp extends Struct.ComponentSchema {
+  collectionName: 'components_shared_dowload_apps';
+  info: {
+    displayName: 'Dowload App';
+    icon: 'arrowDown';
+    description: '';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    Dowload_Android_Button: Schema.Attribute.Component<
+      'shared.image-with-link',
+      false
+    >;
+    Download_IOS_Button: Schema.Attribute.Component<
+      'shared.image-with-link',
+      false
+    >;
+    Side_Image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_cards';
   info: {
@@ -81,6 +128,9 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'shared.image-with-link': SharedImageWithLink;
+      'shared.header': SharedHeader;
+      'shared.dowload-app': SharedDowloadApp;
       'shared.card': SharedCard;
     }
   }

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_dowload_apps",
+  "info": {
+    "displayName": "Dowload App",
+    "icon": "arrowDown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Dowload_Android_Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image-with-link"
+    },
+    "Download_IOS_Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image-with-link"
+    },
+    "Side_Image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
