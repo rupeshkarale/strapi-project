@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_navbars",
+  "info": {
+    "displayName": "navbar",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "download_app_button": {
+      "type": "string",
+      "required": true
+    },
+    "menu_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.headers-with-link"
+    }
+  }
+}

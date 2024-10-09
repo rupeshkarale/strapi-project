@@ -49,6 +49,29 @@ export interface SharedQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedNew extends Struct.ComponentSchema {
+  collectionName: 'components_shared_news';
+  info: {
+    displayName: 'new';
+  };
+  attributes: {};
+}
+
+export interface SharedNavbar extends Struct.ComponentSchema {
+  collectionName: 'components_shared_navbars';
+  info: {
+    displayName: 'navbar';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    download_app_button: Schema.Attribute.String & Schema.Attribute.Required;
+    menu_links: Schema.Attribute.Component<'shared.headers-with-link', true>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -72,16 +95,26 @@ export interface SharedImageWithLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHeadersWithLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_headers_with_links';
+  info: {
+    displayName: 'headers-with-link';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    link: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedHeader extends Struct.ComponentSchema {
   collectionName: 'components_shared_headers';
   info: {
     displayName: 'header';
+    description: '';
   };
   attributes: {
     Heading: Schema.Attribute.String;
-    left_image: Schema.Attribute.Media<'images' | 'files'>;
     main_image: Schema.Attribute.Media<'images' | 'files'>;
-    right_image: Schema.Attribute.Media<'images' | 'files'>;
   };
 }
 
@@ -127,8 +160,11 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
+      'shared.new': SharedNew;
+      'shared.navbar': SharedNavbar;
       'shared.media': SharedMedia;
       'shared.image-with-link': SharedImageWithLink;
+      'shared.headers-with-link': SharedHeadersWithLink;
       'shared.header': SharedHeader;
       'shared.dowload-app': SharedDowloadApp;
       'shared.card': SharedCard;

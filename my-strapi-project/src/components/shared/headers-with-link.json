@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_headers_with_links",
+  "info": {
+    "displayName": "headers-with-link"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    }
+  }
+}
